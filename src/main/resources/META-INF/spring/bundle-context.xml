@@ -17,4 +17,7 @@
 	<bean id="newUserViewDescriptor"
 		class="com.thingtrack.konekti.plugin.admin.view.internal.NewUserViewDescriptor" />
 
+	<bean id="exampleView"
+		class="com.thingtrack.konekti.plugin.admin.view.internal.ExampleView" />
+
 </beans>

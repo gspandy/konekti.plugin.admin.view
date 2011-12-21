@@ -18,15 +18,20 @@ package com.thingtrack.konekti.plugin.admin.view.internal;
 import com.thingtrack.konekti.domain.kernel.exception.KonektiException;
 import com.thingtrack.konekti.domain.ui.IPageLayout;
 import com.thingtrack.konekti.domain.ui.IViewDescriptor;
+import com.vaadin.ui.AbstractComponentContainer;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Layout;
+import com.vaadin.ui.VerticalLayout;
 
 public class NewUserViewDescriptor implements IViewDescriptor {
 
-	public void createView(Layout viewlayout) throws KonektiException {
+	public AbstractComponentContainer createView() throws KonektiException {
 	
+		Layout layout = new VerticalLayout(); 
 		Label label = new Label("Esto es la vista para el formulario de nuevos usuarios");
-		viewlayout.addComponent(label);
+		layout.addComponent(label);
+		
+		return (AbstractComponentContainer) layout;
 	}
 
 	public String getDescription() {
@@ -37,7 +42,7 @@ public class NewUserViewDescriptor implements IViewDescriptor {
 		return "konekti.plugin.admin.view.new-user";
 	}
 
-	public Object getIcon() {
+	public String getIcon() {
 		return null;
 	}
 
